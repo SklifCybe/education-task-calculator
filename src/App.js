@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Calculator } from './screens/Calculator';
 import { Settings } from './screens/Settings';
+import { NotFound } from './screens/NotFound';
 
 import { lightTheme } from './styles/themes/light-theme';
 import { GlobalStyle } from './styles/global-style';
@@ -29,6 +30,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Calculator />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>
   );
