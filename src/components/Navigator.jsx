@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NavigatorStyle = styled.nav`
-  ul {
-    display: flex;
-    gap: 1rem;
-  }
+const ListStyle = styled.ul`
+  display: flex;
+  gap: 1rem;
 `;
 
 const ListItemStyle = styled.li`
@@ -28,12 +26,12 @@ const Navigator = () => {
   };
 
   return (
-    <NavigatorStyle>
-      <ul onClick={togglePage}>
+    <nav>
+      <ListStyle onClick={togglePage}>
         <ListItemStyle active={page === 'home'}>Home</ListItemStyle>
         <ListItemStyle active={page === 'settings'}>Settings</ListItemStyle>
-      </ul>
-    </NavigatorStyle>
+      </ListStyle>
+    </nav>
   );
 };
 
