@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+import { PageContext } from '../utils/page-context';
 
 const ListStyle = styled.ul`
   display: flex;
@@ -17,22 +19,27 @@ const ListItemStyle = styled.li`
 `;
 
 const Navigator = () => {
-  const [page, setPage] = React.useState('home');
+  const { page, setPage } = React.useContext(PageContext);
+  const location = useLocation();
 
   const togglePage = (event) => {
     const newPage = event.target.textContent;
 
-    if (newPage === 'Home') setPage('home');
-    if (newPage === 'Settings') setPage('settings');
+    if (newPage === 'Home') setPage('/');
+    if (newPage === 'Settings') setPage('/settings');
   };
+
+  React.useEffect(() => {
+    setPage(location.pathname);
+  }, [page]);
 
   return (
     <nav>
       <ListStyle onClick={togglePage}>
-        <ListItemStyle active={page === 'home'}>
+        <ListItemStyle active={page === '/'}>
           <Link to="/">Home</Link>
         </ListItemStyle>
-        <ListItemStyle active={page === 'settings'}>
+        <ListItemStyle active={page === '/settings'}>
           <Link to="settings">Settings</Link>
         </ListItemStyle>
       </ListStyle>

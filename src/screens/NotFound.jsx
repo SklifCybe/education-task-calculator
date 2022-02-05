@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import { PageContext } from '../utils/page-context';
+
 const NotFoundStyle = styled.main`
   position: absolute;
   left: 50%;
@@ -18,11 +20,19 @@ const ButtonStyle = styled.button`
 `;
 
 const NotFound = () => {
+  const { setPage } = React.useContext(PageContext);
+
+  const clickHandler = () => {
+    setPage('home');
+  };
+
   return (
     <NotFoundStyle>
       <h2>Not found page</h2>
       <ButtonStyle>
-        <Link to="/">Go Home</Link>
+        <Link to="/" onClick={clickHandler}>
+          Go Home
+        </Link>
       </ButtonStyle>
     </NotFoundStyle>
   );
