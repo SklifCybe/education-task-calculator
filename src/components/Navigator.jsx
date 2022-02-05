@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ListStyle = styled.ul`
   display: flex;
@@ -28,8 +29,12 @@ const Navigator = () => {
   return (
     <nav>
       <ListStyle onClick={togglePage}>
-        <ListItemStyle active={page === 'home'}>Home</ListItemStyle>
-        <ListItemStyle active={page === 'settings'}>Settings</ListItemStyle>
+        <ListItemStyle active={page === 'home'}>
+          <Link to="/">Home</Link>
+        </ListItemStyle>
+        <ListItemStyle active={page === 'settings'}>
+          <Link to="settings">Settings</Link>
+        </ListItemStyle>
       </ListStyle>
     </nav>
   );

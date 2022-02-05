@@ -1,7 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
 
 import { Header } from './components/Header';
+import { Calculator } from './screens/Calculator';
+import { Settings } from './screens/Settings';
 
 import { lightTheme } from './styles/themes/light-theme';
 import { GlobalStyle } from './styles/global-style';
@@ -23,6 +26,10 @@ const App = () => {
     <ThemeProvider theme={getCurrentTheme()}>
       <GlobalStyle />
       <Header />
+      <Routes>
+        <Route path="/" element={<Calculator />} />
+        <Route path="/settings" element={<Settings />} />
+      </Routes>
     </ThemeProvider>
   );
 };
