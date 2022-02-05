@@ -12,6 +12,7 @@ const HeaderStyle = styled.header`
 
   h1 {
     font-size: 16px;
+    font-weight: normal;
   }
 `;
 

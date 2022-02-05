@@ -12,9 +12,7 @@ const ListStyle = styled.ul`
 const ListItemStyle = styled.li`
   cursor: pointer;
   padding-bottom: 3px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: ${({ theme, active }) => !active && theme.background.secondary};
+  border-bottom: 1px solid ${({ theme, active }) => !active && theme.background.secondary};
   color: ${({ theme, active }) => !active && theme.color.disabled};
 `;
 
