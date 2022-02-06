@@ -29,7 +29,7 @@ const Navigator = () => {
 
   React.useEffect(() => {
     setPage(location.pathname);
-  }, [page]);
+  }, [setPage, location]);
 
   return (
     <nav>
