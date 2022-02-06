@@ -9,20 +9,18 @@ import { NotFound } from './screens/NotFound';
 import { PageContext } from './utils/page-context';
 
 import { lightTheme } from './styles/themes/light-theme';
+import { coloredTheme } from './styles/themes/colored-theme';
+import { darkTheme } from './styles/themes/dark-theme';
 import { GlobalStyle } from './styles/global-style';
 
 const App = () => {
   const [theme, setTheme] = React.useState('light');
   const [page, setPage] = React.useState('/');
 
-  const changeTheme = (themeName) => {
-    setTheme(themeName);
-  };
-
   const getCurrentTheme = () => {
     if (theme === 'light') return lightTheme;
-    // if (theme === 'dark') return darkTheme;
-    // if (theme === 'colored') return coloredTheme;
+    if (theme === 'dark') return darkTheme;
+    if (theme === 'colored') return coloredTheme;
   };
 
   return (
@@ -32,7 +30,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Calculator />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings" element={<Settings theme={theme} setTheme={setTheme} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ThemeProvider>

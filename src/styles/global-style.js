@@ -22,6 +22,11 @@ const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.background.primary};
     color: ${({ theme }) => theme.color.primary};
   }
+
+  button, input, select {
+    background: ${({ theme }) => theme.input.background};
+    color: ${({ theme }) => theme.input.color};
+  }
 `;
 
 export { GlobalStyle };

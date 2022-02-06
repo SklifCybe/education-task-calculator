@@ -10,12 +10,12 @@ const SettingsStyle = styled.main`
   width: 10rem;
 `;
 
-const Settings = () => {
+const Settings = ({ theme, setTheme }) => {
   return (
     <SettingsStyle>
       <Flex direction="column" gap="20px">
         <h1>Settings</h1>
-        <SwitchTheme />
+        <SwitchTheme theme={theme} setTheme={setTheme} />
         <Button padding="10px">Clear All History</Button>
       </Flex>
     </SettingsStyle>
