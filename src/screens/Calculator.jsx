@@ -8,6 +8,8 @@ import { Flex } from '../components/Flex';
 
 const CalculatorStyle = styled.main`
   padding: 1.5rem;
+  display: flex;
+  justify-content: center;
 `;
 
 const Calculator = () => {
