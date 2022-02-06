@@ -11,7 +11,7 @@ const KeypadStyle = styled.section`
     height: 70px;
     width: 70px;
     border-radius: 10px;
-    margin: 30px;
+    margin: 10px 50px;
   }
 `;
 
