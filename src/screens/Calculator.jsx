@@ -13,14 +13,55 @@ const CalculatorStyle = styled.main`
 `;
 
 const Calculator = () => {
+  const [calculateString, setCalculateString] = React.useState('');
+  const [history, setHistory] = React.useState([]);
+
+  const setCalculate = (event) => {
+    if (event.target.localName === 'button') {
+      const keyValue = event.target.textContent;
+
+      if (keyValue === '=') {
+        let result;
+        setCalculateString((prevValue) => {
+          try {
+            result = eval(prevValue).toString();
+          } catch (err) {
+            console.error(err.message);
+            return '';
+          }
+          return result;
+        });
+        setHistory((prevHistory) => {
+          if (result) {
+            return [...prevHistory, `${calculateString}=${result}`];
+          }
+          return prevHistory;
+        });
+        return;
+      } else if (keyValue === 'CE') {
+        setCalculateString('');
+        return;
+      } else if (keyValue === 'C') {
+        setCalculateString((prevValue) => prevValue.slice(0, prevValue.length - 1));
+        return;
+      }
+
+      setCalculateString((prevValue) => prevValue + keyValue);
+    }
+  };
+
+  const clearHistory = () => {
+    setHistory([]);
+  };
+
   return (
     <CalculatorStyle>
       <Flex gap="10px">
         <Flex direction="column" width="900px">
-          <Display />
-          <Keypad />
+          <Display value={calculateString} />
+          <Keypad setPress={setCalculate} />
         </Flex>
-        <ControlPanel />
+        <ControlPanel historyList={history} />
       </Flex>
     </CalculatorStyle>
   );

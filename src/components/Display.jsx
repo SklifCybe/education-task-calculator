@@ -13,8 +13,8 @@ const DisplayStyle = styled.input.attrs({
   text-align: right;
 `;
 
-const Display = () => {
-  return <DisplayStyle />;
+const Display = ({ value, onChange }) => {
+  return <DisplayStyle value={value} onChange={onChange} readOnly />;
 };
 
 export { Display };

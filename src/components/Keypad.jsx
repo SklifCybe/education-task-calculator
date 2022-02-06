@@ -12,9 +12,9 @@ const KeyStyle = styled.button`
   margin: 10px 50px;
 `;
 
-const Keypad = () => {
+const Keypad = ({ setPress }) => {
   return (
-    <div>
+    <div onClick={setPress}>
       {keys.map((key, id) => (
         <KeyStyle key={id}>{key}</KeyStyle>
       ))}

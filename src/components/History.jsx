@@ -1,58 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HistoryStyle = styled.h3`
-  margin-bottom: 20px;
-  font-weight: normal;
+import { Flex } from './Flex';
+
+const HistoryStyle = styled.div`
+  opacity: ${({ visible }) => (visible ? '1' : '0')};
+  width: 270px;
 `;
 
-const History = () => {
+const History = ({ historyList, visible }) => {
   return (
-    <>
-      <HistoryStyle>History</HistoryStyle>
-      <ul>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-        <li>temp</li>
-      </ul>
-    </>
+    <HistoryStyle visible={visible}>
+      <Flex direction="column" gap="10px">
+        <p>History</p>
+        <ul>{historyList && historyList.map((historyEl, id) => <li key={id}>{historyEl}</li>)}</ul>
+      </Flex>
+    </HistoryStyle>
   );
 };
 
