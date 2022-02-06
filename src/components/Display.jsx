@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const DisplayStyle = styled.input`
+const DisplayStyle = styled.input.attrs({
+  type: 'text',
+})`
   height: 5rem;
   min-width: 120px;
   font-size: 34px;
@@ -12,7 +14,7 @@ const DisplayStyle = styled.input`
 `;
 
 const Display = () => {
-  return <DisplayStyle type="text" />;
+  return <DisplayStyle />;
 };
 
 export { Display };
