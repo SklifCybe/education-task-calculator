@@ -8,15 +8,17 @@ const ControlPanelStyle = styled.aside`
   width: 300px;
   max-height: 450px;
   overflow: auto;
-  border-left: ${({ theme, visible }) => visible && `2px solid ${theme.color.disabled}`};
+  border-left: ${({ theme, visible }) => '2px ' + visible && `solid ${theme.color.disabled}`};
   position: relative;
 `;
 
 const ButtonStyle = styled.button`
   position: absolute;
-  right: ${({ visible }) => (visible ? '1rem' : '24px')};
+  right: ${({ visible }) => (visible ? '1rem' : '2.05rem')};
   cursor: pointer;
-  padding: 0 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 `;
 
 const ControlPanel = () => {

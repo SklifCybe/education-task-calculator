@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { PageContext } from '../utils/page-context';
+import { Button } from '../components/Button';
 
 const NotFoundStyle = styled.main`
   position: absolute;
@@ -12,11 +13,6 @@ const NotFoundStyle = styled.main`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-`;
-
-const ButtonStyle = styled.button`
-  padding: 5px;
-  cursor: pointer;
 `;
 
 const NotFound = () => {
@@ -29,11 +25,11 @@ const NotFound = () => {
   return (
     <NotFoundStyle>
       <h2>Not found page</h2>
-      <ButtonStyle>
+      <Button padding="5px">
         <Link to="/" onClick={clickHandler}>
           Go Home
         </Link>
-      </ButtonStyle>
+      </Button>
     </NotFoundStyle>
   );
 };

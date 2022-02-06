@@ -9,17 +9,12 @@ const HeaderStyle = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-
-  h1 {
-    font-size: 16px;
-    font-weight: normal;
-  }
 `;
 
 const Header = () => {
   return (
     <HeaderStyle>
-      <h1>Calculator App</h1>
+      <p>Calculator App</p>
       <Navigator />
     </HeaderStyle>
   );
