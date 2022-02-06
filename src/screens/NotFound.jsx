@@ -25,11 +25,9 @@ const NotFound = () => {
   return (
     <NotFoundStyle>
       <h2>Not found page</h2>
-      <Button padding="5px">
-        <Link to="/" onClick={clickHandler}>
-          Go Home
-        </Link>
-      </Button>
+      <Link to="/" onClick={clickHandler}>
+        <Button padding="5px" width="100%">Go Home</Button>
+      </Link>
     </NotFoundStyle>
   );
 };

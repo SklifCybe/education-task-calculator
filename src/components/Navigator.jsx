@@ -34,12 +34,12 @@ const Navigator = () => {
   return (
     <nav>
       <ListStyle onClick={togglePage}>
-        <ListItemStyle active={page === '/'}>
-          <Link to="/">Home</Link>
-        </ListItemStyle>
-        <ListItemStyle active={page === '/settings'}>
-          <Link to="settings">Settings</Link>
-        </ListItemStyle>
+        <Link to="/">
+          <ListItemStyle active={page === '/'}>Home</ListItemStyle>
+        </Link>
+        <Link to="settings">
+          <ListItemStyle active={page === '/settings'}>Settings</ListItemStyle>
+        </Link>
       </ListStyle>
     </nav>
   );
