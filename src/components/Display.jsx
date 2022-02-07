@@ -14,7 +14,11 @@ const DisplayStyle = styled.input.attrs({
 `;
 
 const Display = ({ value, onChange }) => {
-  return <DisplayStyle value={value} onChange={onChange} readOnly />;
+  if (value.result) {
+    return <DisplayStyle value={value.result} onChange={onChange} readOnly />;
+  }
+
+  return <DisplayStyle value={value.expression} onChange={onChange} readOnly />;
 };
 
 export { Display };

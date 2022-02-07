@@ -12,54 +12,83 @@ const CalculatorStyle = styled.main`
   justify-content: center;
 `;
 
-const Calculator = () => {
-  const [calculateString, setCalculateString] = React.useState('');
-  const [history, setHistory] = React.useState([]);
+const Calculator = ({ history, setHistory }) => {
+  const [calculate, setCalculate] = React.useState({
+    expression: '',
+    result: '',
+  });
 
-  const setCalculate = (event) => {
-    if (event.target.localName === 'button') {
-      const keyValue = event.target.textContent;
-
-      if (keyValue === '=') {
-        let result;
-        setCalculateString((prevValue) => {
-          try {
-            result = eval(prevValue).toString();
-          } catch (err) {
-            console.error(err.message);
-            return '';
-          }
-          return result;
-        });
-        setHistory((prevHistory) => {
-          if (result) {
-            return [...prevHistory, `${calculateString}=${result}`];
-          }
-          return prevHistory;
-        });
-        return;
-      } else if (keyValue === 'CE') {
-        setCalculateString('');
-        return;
-      } else if (keyValue === 'C') {
-        setCalculateString((prevValue) => prevValue.slice(0, prevValue.length - 1));
-        return;
+  const pressEqual = () => {
+    setCalculate((prevCalc) => {
+      try {
+        return {
+          ...prevCalc,
+          result: eval(prevCalc.expression).toString(),
+        };
+      } catch (err) {
+        console.error(err.message);
+        return {
+          expression: '',
+          result: '',
+        };
       }
+    });
+  };
 
-      setCalculateString((prevValue) => prevValue + keyValue);
+  const pressClear = () => {
+    setCalculate((prevCalc) => {
+      if (prevCalc.result) {
+        return {
+          result: '',
+          expression: prevCalc.result.slice(0, prevCalc.result.length - 1),
+        };
+      }
+      return {
+        result: '',
+        expression: prevCalc.expression.slice(0, prevCalc.expression.length - 1),
+      };
+    });
+  };
+
+  const buttonHandler = (event) => {
+    if (event.target.localName === 'button') {
+      const buttonValue = event.target.textContent;
+
+      switch (buttonValue) {
+        case '=':
+          pressEqual();
+          break;
+        case 'CE':
+          setCalculate({ expression: '', result: '' });
+          break;
+        case 'C':
+          pressClear();
+          break;
+        default:
+          setCalculate((prevCalc) => ({
+            result: '',
+            expression: prevCalc.result
+              ? prevCalc.result + buttonValue
+              : prevCalc.expression + buttonValue,
+          }));
+          break;
+      }
     }
   };
 
-  const clearHistory = () => {
-    setHistory([]);
-  };
+  React.useEffect(() => {
+    const { expression, result } = calculate;
+    if (result) {
+      setHistory((prevHistory) => [...prevHistory, `${expression}=${result}`]);
+    }
+  }, [calculate, setHistory]);
 
   return (
     <CalculatorStyle>
       <Flex gap="10px">
         <Flex direction="column" width="900px">
-          <Display value={calculateString} />
-          <Keypad setPress={setCalculate} />
+          <Display value={calculate} />
+          <Keypad setPress={buttonHandler} />
         </Flex>
         <ControlPanel historyList={history} />
       </Flex>
