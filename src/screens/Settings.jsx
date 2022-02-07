@@ -10,13 +10,15 @@ const SettingsStyle = styled.main`
   width: 10rem;
 `;
 
-const Settings = ({ theme, setTheme }) => {
+const Settings = ({ theme, setTheme, clearHistory }) => {
   return (
     <SettingsStyle>
       <Flex direction="column" gap="20px">
         <h1>Settings</h1>
         <SwitchTheme theme={theme} setTheme={setTheme} />
-        <Button padding="10px">Clear All History</Button>
+        <Button padding="10px" onClick={clearHistory}>
+          Clear All History
+        </Button>
       </Flex>
     </SettingsStyle>
   );

@@ -16,6 +16,7 @@ import { GlobalStyle } from './styles/global-style';
 const App = () => {
   const [theme, setTheme] = React.useState('light');
   const [page, setPage] = React.useState('/');
+  const [history, setHistory] = React.useState([]);
 
   const getCurrentTheme = () => {
     if (theme === 'light') return lightTheme;
@@ -23,14 +24,19 @@ const App = () => {
     if (theme === 'colored') return coloredTheme;
   };
 
+  const clearHistory = () => setHistory([]);
+
   return (
     <PageContext.Provider value={{ page, setPage }}>
       <ThemeProvider theme={getCurrentTheme()}>
         <GlobalStyle />
         <Header />
         <Routes>
-          <Route path="/" element={<Calculator />} />
-          <Route path="/settings" element={<Settings theme={theme} setTheme={setTheme} />} />
+          <Route path="/" element={<Calculator history={history} setHistory={setHistory} />} />
+          <Route
+            path="/settings"
+            element={<Settings theme={theme} setTheme={setTheme} clearHistory={clearHistory} />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ThemeProvider>
