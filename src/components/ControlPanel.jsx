@@ -10,6 +10,7 @@ const ControlPanelStyle = styled.aside`
   max-height: 450px;
   overflow: auto;
   border-left: ${({ theme }) => `2px solid ${theme.color.disabled}`};
+  overflow: ${({ visible }) => (visible ? 'auto' : 'hidden')};
 `;
 
 const ButtonStyle = styled.button`
@@ -17,7 +18,6 @@ const ButtonStyle = styled.button`
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  
 `;
 
 const ControlPanel = ({ historyList }) => {

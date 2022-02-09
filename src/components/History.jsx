@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { Flex } from './Flex';
 
 const HistoryStyle = styled.div`
-  opacity: ${({ visible }) => (visible ? '1' : '0')};
   width: 270px;
+  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
 `;
 
 const History = ({ historyList, visible }) => {
