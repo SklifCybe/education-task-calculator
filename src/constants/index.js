@@ -1,4 +1,4 @@
-const keys = [
+const buttons = [
   'C',
   '7',
   '8',
@@ -21,4 +21,4 @@ const keys = [
   'CE',
 ];
 
-export { keys };
+export { buttons };

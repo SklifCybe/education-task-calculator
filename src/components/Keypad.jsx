@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { keys } from '../constants';
+import { buttons } from '../constants';
 
 const KeyStyle = styled.button`
   font-size: 34px;
@@ -15,7 +15,7 @@ const KeyStyle = styled.button`
 const Keypad = ({ setPress }) => {
   return (
     <div onClick={setPress}>
-      {keys.map((key, id) => (
+      {buttons.map((key, id) => (
         <KeyStyle key={id}>{key}</KeyStyle>
       ))}
     </div>
