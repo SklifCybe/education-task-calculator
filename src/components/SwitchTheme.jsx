@@ -11,9 +11,9 @@ const SelectStyle = styled.select`
   width: 100%;
 `;
 
-const SwitchTheme = ({ theme, setTheme }) => {
+const SwitchTheme = ({ theme, chooseTheme }) => {
   const selectTheme = (event) => {
-    setTheme(event.target.value);
+    chooseTheme(event.target.value);
   };
 
   return (

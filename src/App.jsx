@@ -7,22 +7,14 @@ import { Calculator } from './screens/Calculator';
 import { Settings } from './screens/Settings';
 import { NotFound } from './screens/NotFound';
 import { PageContext } from './utils/page-context';
+import { useTheme } from './hooks/useTheme';
 
-import { lightTheme } from './styles/themes/light-theme';
-import { coloredTheme } from './styles/themes/colored-theme';
-import { darkTheme } from './styles/themes/dark-theme';
 import { GlobalStyle } from './styles/global-style';
 
 const App = () => {
-  const [theme, setTheme] = React.useState('light');
+  const { theme, chooseTheme, getCurrentTheme } = useTheme();
   const [page, setPage] = React.useState('/');
   const [history, setHistory] = React.useState([]);
-
-  const getCurrentTheme = () => {
-    if (theme === 'light') return lightTheme;
-    if (theme === 'dark') return darkTheme;
-    if (theme === 'colored') return coloredTheme;
-  };
 
   const clearHistory = () => setHistory([]);
 
@@ -35,7 +27,7 @@ const App = () => {
           <Route path="/" element={<Calculator history={history} setHistory={setHistory} />} />
           <Route
             path="/settings"
-            element={<Settings theme={theme} setTheme={setTheme} clearHistory={clearHistory} />}
+            element={<Settings theme={theme} chooseTheme={chooseTheme} clearHistory={clearHistory} />}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
