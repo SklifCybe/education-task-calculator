@@ -19,6 +19,7 @@ const buttons = [
   '0',
   ')',
   'CE',
+  '%'
 ];
 
 export { buttons };
