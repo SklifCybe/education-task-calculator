@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const DisplayStyle = styled.input.attrs({
   type: 'text',
@@ -13,12 +14,23 @@ const DisplayStyle = styled.input.attrs({
   text-align: right;
 `;
 
-const Display = ({ value, onChange }) => {
+const Display = ({ value }) => {
   if (value.result) {
-    return <DisplayStyle value={value.result} onChange={onChange} readOnly />;
+    return <DisplayStyle value={value.result} readOnly />;
   }
 
-  return <DisplayStyle value={value.expression} onChange={onChange} readOnly />;
+  return <DisplayStyle value={value.expression} readOnly />;
+};
+
+Display.propTypes = {
+  value: PropTypes.shape({
+    expression: PropTypes.string.isRequired,
+    result: PropTypes.string.isRequired,
+  }),
+};
+
+DisplayStyle.propTypes = {
+  value: PropTypes.string.isRequired,
 };
 
 export { Display };

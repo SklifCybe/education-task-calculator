@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { Display } from '../components/Display';
 import { Keypad } from '../components/Keypad';
@@ -94,6 +95,11 @@ const Calculator = ({ history, setHistory }) => {
       </Flex>
     </CalculatorStyle>
   );
+};
+
+Calculator.propTypes = {
+  history: PropTypes.array.isRequired,
+  setHistory: PropTypes.func.isRequired,
 };
 
 export { Calculator };

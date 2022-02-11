@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { History } from './History';
@@ -37,6 +38,19 @@ const ControlPanel = ({ historyList }) => {
       </Flex>
     </ControlPanelStyle>
   );
+};
+
+ControlPanel.propTypes = {
+  historyList: PropTypes.array.isRequired,
+};
+
+ControlPanelStyle.propTypes = {
+  visible: PropTypes.bool.isRequired,
+};
+
+ButtonStyle.propTypes = {
+  visible: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export { ControlPanel };

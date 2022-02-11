@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Flex } from './Flex';
@@ -17,6 +18,15 @@ const History = ({ historyList, visible }) => {
       </Flex>
     </HistoryStyle>
   );
+};
+
+History.propTypes = {
+  historyList: PropTypes.array.isRequired,
+  visible: PropTypes.bool.isRequired,
+};
+
+HistoryStyle.propTypes = {
+  visible: PropTypes.bool.isRequired,
 };
 
 export { History };

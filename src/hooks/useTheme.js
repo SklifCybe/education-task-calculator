@@ -23,6 +23,7 @@ const useTheme = (defaultTheme = 'light') => {
   };
 
   const chooseTheme = (selectedTheme) => {
+    console.log('this is my function chooseTheme');
     localStorage.setItem(keyOfLocalStorage, selectedTheme);
     setTheme(selectedTheme);
   };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { buttons } from '../constants';
@@ -20,6 +21,10 @@ const Keypad = ({ setPress }) => {
       ))}
     </div>
   );
+};
+
+Keypad.propTypes = {
+  setPress: PropTypes.func.isRequired,
 };
 
 export { Keypad };

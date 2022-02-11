@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Flex } from '../components/Flex';
@@ -22,6 +23,12 @@ const Settings = ({ theme, chooseTheme, clearHistory }) => {
       </Flex>
     </SettingsStyle>
   );
+};
+
+Settings.propTypes = {
+  theme: PropTypes.string.isRequired,
+  chooseTheme: PropTypes.func.isRequired,
+  clearHistory: PropTypes.func.isRequired,
 };
 
 export { Settings };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
 import { PageContext } from '../utils/page-context';
@@ -43,6 +44,14 @@ const Navigator = () => {
       </ListStyle>
     </nav>
   );
+};
+
+ListStyle.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
+ListItemStyle.propTypes = {
+  active: PropTypes.bool.isRequired,
 };
 
 export { Navigator };
