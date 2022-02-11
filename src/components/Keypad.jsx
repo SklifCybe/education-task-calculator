@@ -15,11 +15,11 @@ const KeyStyle = styled.button`
 
 const Keypad = ({ setPress }) => {
   return (
-    <div onClick={setPress}>
+    <section onClick={setPress}>
       {buttons.map((key, id) => (
         <KeyStyle key={id}>{key}</KeyStyle>
       ))}
-    </div>
+    </section>
   );
 };
 
