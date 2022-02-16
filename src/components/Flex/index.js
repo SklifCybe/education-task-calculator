@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Flex = styled.div`
   display: flex;
   flex-direction: ${(props) => props.direction};
-  flex-wrap: ${(props) => props.wrap}
+  flex-wrap: ${(props) => props.wrap};
   align-items: ${(props) => props.align};
   justify-content: ${(props) => props.justify};
   gap: ${(props) => props.gap};

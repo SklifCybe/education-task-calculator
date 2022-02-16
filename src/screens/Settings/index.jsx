@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-import { Flex } from '../components/Flex';
-import { Button } from '../components/Button';
-import { SwitchTheme } from '../components/SwitchTheme';
+import { Flex } from '@/components/Flex';
+import { Button } from '@/components/Button';
+import { SwitchTheme } from '@/components/SwitchTheme';
 
-const SettingsStyle = styled.main`
-  padding: 2rem;
-  width: 10rem;
-`;
+import { SettingsStyle } from './styles';
 
 const Settings = ({ theme, chooseTheme, clearHistory }) => {
   return (

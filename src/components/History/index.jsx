@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-import { Flex } from './Flex';
+import { Flex } from '@/components/Flex';
 
-const HistoryStyle = styled.section`
-  width: 270px;
-  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
-`;
+import { HistoryStyle } from './styles';
 
 const History = ({ historyList, visible }) => {
   return (
@@ -24,10 +20,6 @@ const History = ({ historyList, visible }) => {
 
 History.propTypes = {
   historyList: PropTypes.array.isRequired,
-  visible: PropTypes.bool.isRequired,
-};
-
-HistoryStyle.propTypes = {
   visible: PropTypes.bool.isRequired,
 };
 

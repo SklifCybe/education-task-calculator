@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { lightTheme } from '../styles/themes/light-theme';
-import { coloredTheme } from '../styles/themes/colored-theme';
-import { darkTheme } from '../styles/themes/dark-theme';
+import { lightTheme } from '@/styles/themes/light-theme';
+import { coloredTheme } from '@/styles/themes/colored-theme';
+import { darkTheme } from '@/styles/themes/dark-theme';
 
 const keyOfLocalStorage = 'theme';
 

@@ -1,21 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
-import { PageContext } from '../utils/page-context';
+import { PageContext } from '@/utils/page-context';
 
-const ListStyle = styled.ul`
-  display: flex;
-  gap: 1rem;
-`;
-
-const ListItemStyle = styled.li`
-  cursor: pointer;
-  padding-bottom: 3px;
-  border-bottom: 1px solid ${({ theme, active }) => !active && theme.background.secondary};
-  color: ${({ theme, active }) => !active && theme.color.disabled};
-`;
+import { ListStyle, ListItemStyle } from './styles';
 
 const Navigator = () => {
   const { page, setPage } = React.useContext(PageContext);
@@ -44,14 +32,6 @@ const Navigator = () => {
       </ListStyle>
     </nav>
   );
-};
-
-ListStyle.propTypes = {
-  onClick: PropTypes.func.isRequired,
-};
-
-ListItemStyle.propTypes = {
-  active: PropTypes.bool.isRequired,
 };
 
 export { Navigator };

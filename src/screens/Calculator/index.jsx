@@ -1,17 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { Display } from '../components/Display';
-import { Keypad } from '../components/Keypad';
-import { ControlPanel } from '../components/ControlPanel';
-import { Flex } from '../components/Flex';
+import { Display } from '@/components/Display';
+import { Keypad } from '@/components/Keypad';
+import { ControlPanel } from '@/components/ControlPanel';
+import { Flex } from '@/components/Flex';
 
-const CalculatorStyle = styled.main`
-  padding: 1.5rem;
-  display: flex;
-  justify-content: center;
-`;
+import { CalculatorStyle } from './styles';
 
 const Calculator = ({ history, setHistory }) => {
   const [calculate, setCalculate] = React.useState({

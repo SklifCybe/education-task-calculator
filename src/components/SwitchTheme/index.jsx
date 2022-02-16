@@ -1,16 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const SubTitleStyle = styled.span`
-  font-size: 14px;
-`;
-
-const SelectStyle = styled.select`
-  padding: 10px;
-  cursor: pointer;
-  width: 100%;
-`;
+import { SelectStyle, SubTitleStyle } from './styles';
 
 const SwitchTheme = ({ theme, chooseTheme }) => {
   const selectTheme = (event) => {
@@ -32,11 +23,6 @@ const SwitchTheme = ({ theme, chooseTheme }) => {
 SwitchTheme.propTypes = {
   theme: PropTypes.string.isRequired,
   chooseTheme: PropTypes.func.isRequired,
-};
-
-SelectStyle.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
 };
 
 export { SwitchTheme };
