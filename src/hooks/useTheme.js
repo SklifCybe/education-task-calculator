@@ -4,8 +4,6 @@ import { lightTheme } from '@/styles/themes/light-theme';
 import { coloredTheme } from '@/styles/themes/colored-theme';
 import { darkTheme } from '@/styles/themes/dark-theme';
 
-const keyOfLocalStorage = 'theme';
-
 const useTheme = (defaultTheme = 'light') => {
   const [theme, setTheme] = React.useState(defaultTheme);
 
@@ -23,18 +21,8 @@ const useTheme = (defaultTheme = 'light') => {
   };
 
   const chooseTheme = (selectedTheme) => {
-    console.log('this is my function chooseTheme');
-    localStorage.setItem(keyOfLocalStorage, selectedTheme);
     setTheme(selectedTheme);
   };
-
-  React.useEffect(() => {
-    const localTheme = localStorage.getItem(keyOfLocalStorage);
-
-    if (localTheme) {
-      setTheme(localTheme);
-    }
-  }, []);
 
   return { theme, getCurrentTheme, chooseTheme };
 };
