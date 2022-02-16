@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { evaluate as calc } from 'mathjs';
+
 import { Display } from '@/components/Display';
 import { Keypad } from '@/components/Keypad';
 import { ControlPanel } from '@/components/ControlPanel';
@@ -19,7 +21,7 @@ const Calculator = ({ history, setHistory }) => {
       try {
         return {
           ...prevCalc,
-          result: eval(prevCalc.expression).toString(),
+          result: calc(prevCalc.expression).toString(),
         };
       } catch (err) {
         console.error(err.message);
