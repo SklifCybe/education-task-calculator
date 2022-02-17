@@ -9,4 +9,12 @@ const KeyStyle = styled.button`
   margin: 10px 50px;
 `;
 
-export { KeyStyle };
+const ButtonSection = styled.section`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
+
+export { KeyStyle, ButtonSection };

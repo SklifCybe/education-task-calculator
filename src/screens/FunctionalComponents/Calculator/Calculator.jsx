@@ -57,10 +57,10 @@ const Calculator = ({ history, setHistory }) => {
           pressEqual();
           break;
         case 'CE':
-          setCalculate({ expression: '', result: '' });
+          pressClear();
           break;
         case 'C':
-          pressClear();
+          setCalculate({ expression: '', result: '' });
           break;
         default:
           setCalculate((prevCalc) => ({
@@ -84,7 +84,7 @@ const Calculator = ({ history, setHistory }) => {
   return (
     <CalculatorStyle>
       <Flex gap="10px">
-        <Flex direction="column" width="900px">
+        <Flex direction="column" width="900px" justify="center">
           <Display value={calculate} />
           <Keypad setPress={handleButton} />
         </Flex>

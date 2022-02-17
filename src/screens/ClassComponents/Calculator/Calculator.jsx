@@ -56,10 +56,10 @@ class Calculator extends React.PureComponent {
           this.pressEqual();
           break;
         case 'CE':
-          this.setState({ expression: '', result: '' });
+          this.pressClear();
           break;
         case 'C':
-          this.pressClear();
+          this.setState({ expression: '', result: '' });
           break;
         default:
           this.setState((prevState) => ({

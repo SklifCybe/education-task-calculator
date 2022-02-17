@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import { buttons } from '@/constants';
 
-import { KeyStyle } from './components';
+import { KeyStyle, ButtonSection } from './components';
 
 const Keypad = ({ setPress }) => {
   return (
-    <section onClick={setPress}>
+    <ButtonSection onClick={setPress}>
       {buttons.map((key, id) => (
         <KeyStyle key={id}>{key}</KeyStyle>
       ))}
-    </section>
+    </ButtonSection>
   );
 };
 
