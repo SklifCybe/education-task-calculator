@@ -2,13 +2,13 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
 
-import { Header } from '@/components/Header';
-import { Calculator } from '@/screens/Calculator';
-import { Settings } from '@/screens/Settings';
-import { NotFound } from '@/screens/NotFound';
+import { Header } from '@/components/FunctionalComponents/Header';
+import { Calculator } from '@/screens/FunctionalComponents/Calculator';
+import { Settings } from '@/screens/FunctionalComponents/Settings';
+import { NotFound } from '@/screens/FunctionalComponents/NotFound';
 import { PageContext } from '@/utils/page-context';
 import { useTheme } from '@/hooks/useTheme';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ErrorBoundary } from '@/components/ClassComponents/ErrorBoundary';
 
 import { GlobalStyle } from '@/styles/global-style';
 

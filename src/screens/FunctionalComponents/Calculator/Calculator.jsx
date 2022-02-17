@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import { evaluate as calc } from 'mathjs';
 
-import { Display } from '@/components/Display';
-import { Keypad } from '@/components/Keypad';
-import { ControlPanel } from '@/components/ControlPanel';
-import { Flex } from '@/components/Flex/components';
+import { Display } from '@/components/FunctionalComponents/Display';
+import { Keypad } from '@/components/FunctionalComponents/Keypad';
+import { ControlPanel } from '@/components/FunctionalComponents/ControlPanel';
+import { Flex } from '@/components/FunctionalComponents/Flex/components';
 
 import { CalculatorStyle } from './components';
 
@@ -48,7 +48,7 @@ const Calculator = ({ history, setHistory }) => {
     });
   };
 
-  const buttonHandler = (event) => {
+  const handleButton = (event) => {
     if (event.target.localName === 'button') {
       const buttonValue = event.target.textContent;
 
@@ -86,7 +86,7 @@ const Calculator = ({ history, setHistory }) => {
       <Flex gap="10px">
         <Flex direction="column" width="900px">
           <Display value={calculate} />
-          <Keypad setPress={buttonHandler} />
+          <Keypad setPress={handleButton} />
         </Flex>
         <ControlPanel historyList={history} />
       </Flex>

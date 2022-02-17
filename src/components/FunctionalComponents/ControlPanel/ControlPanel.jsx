@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { History } from '@/components/History';
-import { Flex } from '@/components/Flex/components';
+import { History } from '@/components/FunctionalComponents/History';
+import { Flex } from '@/components/FunctionalComponents/Flex/components';
 
 import { ControlPanelStyle, ButtonStyle } from './components';
 

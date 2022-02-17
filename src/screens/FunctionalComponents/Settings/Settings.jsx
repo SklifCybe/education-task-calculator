@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Flex } from '@/components/Flex/components';
-import { Button } from '@/components/Button/components';
-import { SwitchTheme } from '@/components/SwitchTheme';
+import { Flex } from '@/components/FunctionalComponents/Flex/components';
+import { Button } from '@/components/FunctionalComponents/Button/components';
+import { SwitchTheme } from '@/components/FunctionalComponents/SwitchTheme';
 
 import { SettingsStyle } from './components';
 

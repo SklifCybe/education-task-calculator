@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Flex } from '@/components/Flex/components';
+import { Flex } from '@/components/FunctionalComponents/Flex/components';
 
 import { HistoryStyle } from './components';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NotFound } from '@/screens/NotFound';
+import { NotFound } from '@/screens/FunctionalComponents/NotFound';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
