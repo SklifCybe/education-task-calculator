@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Flex } from '@/components/Flex';
-import { Button } from '@/components/Button';
+import { Flex } from '@/components/Flex/components';
+import { Button } from '@/components/Button/components';
 import { SwitchTheme } from '@/components/SwitchTheme';
 
-import { SettingsStyle } from './styles';
+import { SettingsStyle } from './components';
 
 const Settings = ({ theme, chooseTheme, clearHistory }) => {
   return (

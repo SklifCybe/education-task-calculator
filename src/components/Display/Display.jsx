@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { DisplayStyle } from './styles';
+import { DisplayStyle } from './components';
 
 const Display = ({ value }) => {
   if (value.result) {

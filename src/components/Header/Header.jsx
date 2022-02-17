@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Navigator } from '@/components/Navigator';
 
-import { HeaderStyle } from './styles';
+import { HeaderStyle } from './components';
 
 const Header = () => {
   return (

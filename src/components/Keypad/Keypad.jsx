@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { buttons } from '@/constants';
 
-import { KeyStyle } from './styles';
+import { KeyStyle } from './components';
 
 const Keypad = ({ setPress }) => {
   return (

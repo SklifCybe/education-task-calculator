@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Flex } from '@/components/Flex';
+import { Flex } from '@/components/Flex/components';
 
-import { HistoryStyle } from './styles';
+import { HistoryStyle } from './components';
 
 const History = ({ historyList, visible }) => {
   return (

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { PageContext } from '@/utils/page-context';
 
-import { ListStyle, ListItemStyle } from './styles';
+import { ListStyle, ListItemStyle } from './components';
 
 const Navigator = () => {
   const { page, setPage } = React.useContext(PageContext);

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { History } from '@/components/History';
-import { Flex } from '@/components/Flex';
+import { Flex } from '@/components/Flex/components';
 
-import { ControlPanelStyle, ButtonStyle } from './styles';
+import { ControlPanelStyle, ButtonStyle } from './components';
 
 const ControlPanel = ({ historyList }) => {
   const [showHistory, setShowHistory] = React.useState(true);

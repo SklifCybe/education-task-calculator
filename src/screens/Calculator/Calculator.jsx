@@ -6,9 +6,9 @@ import { evaluate as calc } from 'mathjs';
 import { Display } from '@/components/Display';
 import { Keypad } from '@/components/Keypad';
 import { ControlPanel } from '@/components/ControlPanel';
-import { Flex } from '@/components/Flex';
+import { Flex } from '@/components/Flex/components';
 
-import { CalculatorStyle } from './styles';
+import { CalculatorStyle } from './components';
 
 const Calculator = ({ history, setHistory }) => {
   const [calculate, setCalculate] = React.useState({

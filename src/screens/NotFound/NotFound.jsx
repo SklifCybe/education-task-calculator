@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { PageContext } from '@/utils/page-context';
-import { Button } from '@/components/Button';
+import { Button } from '@/components/Button/components';
 
-import { NotFoundStyle } from './styles';
+import { NotFoundStyle } from './components';
 
 const NotFound = () => {
   const { setPage } = React.useContext(PageContext);

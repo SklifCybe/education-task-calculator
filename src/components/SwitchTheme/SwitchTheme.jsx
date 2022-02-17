@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { SelectStyle, SubTitleStyle } from './styles';
+import { SelectStyle, SubTitleStyle } from './components';
 
 const SwitchTheme = ({ theme, chooseTheme }) => {
   const selectTheme = (event) => {
