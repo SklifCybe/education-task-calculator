@@ -6,21 +6,33 @@ import { Button } from '@/components/Button/components';
 
 import { NotFoundStyle } from './components';
 
-const NotFound = () => {
+const ButtonGoHome = () => {
+  return (
+    <Button padding="5px" width="100%">
+      Go Home
+    </Button>
+  );
+};
+
+const NotFound = ({ error }) => {
   const { setPage } = React.useContext(PageContext);
 
-  const clickHandler = () => {
+  const handleClick = () => {
     setPage('home');
   };
 
   return (
     <NotFoundStyle>
       <h2>Not found page</h2>
-      <Link to="/" onClick={clickHandler}>
-        <Button padding="5px" width="100%">
-          Go Home
-        </Button>
-      </Link>
+      {error ? (
+        <a href="/" onClick={handleClick}>
+          <ButtonGoHome />
+        </a>
+      ) : (
+        <Link to="/" onClick={handleClick}>
+          <ButtonGoHome />
+        </Link>
+      )}
     </NotFoundStyle>
   );
 };

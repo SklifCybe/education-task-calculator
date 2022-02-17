@@ -8,6 +8,7 @@ import { Settings } from '@/screens/Settings';
 import { NotFound } from '@/screens/NotFound';
 import { PageContext } from '@/utils/page-context';
 import { useTheme } from '@/hooks/useTheme';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 import { GlobalStyle } from '@/styles/global-style';
 
@@ -21,18 +22,20 @@ const App = () => {
   return (
     <PageContext.Provider value={{ page, setPage }}>
       <ThemeProvider theme={getCurrentTheme()}>
+        <ErrorBoundary>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Calculator history={history} setHistory={setHistory} />} />
+            <Route
+              path="/settings"
+              element={
+                <Settings theme={theme} chooseTheme={chooseTheme} clearHistory={clearHistory} />
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
         <GlobalStyle />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Calculator history={history} setHistory={setHistory} />} />
-          <Route
-            path="/settings"
-            element={
-              <Settings theme={theme} chooseTheme={chooseTheme} clearHistory={clearHistory} />
-            }
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
       </ThemeProvider>
     </PageContext.Provider>
   );
