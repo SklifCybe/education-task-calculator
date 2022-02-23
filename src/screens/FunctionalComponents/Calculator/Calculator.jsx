@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { evaluate as calc } from 'mathjs';
-
 import { Display } from '@/components/FunctionalComponents/Display';
 import { Keypad } from '@/components/FunctionalComponents/Keypad';
 import { ControlPanel } from '@/components/FunctionalComponents/ControlPanel';
 import { Flex } from '@/components/FunctionalComponents/Flex/components';
+import { calculate as calc } from '@/utils/calculate';
 
 import { CalculatorStyle } from './components';
 
