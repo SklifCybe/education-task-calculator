@@ -1,4 +1,4 @@
-import { Calculator } from '@/utils/CalculatorStorage';
+import { Calculator } from '@/utils/Calculator';
 
 const smartCalculateLogic = (expression) => {
   const values = [];
