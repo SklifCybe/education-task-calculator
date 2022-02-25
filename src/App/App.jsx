@@ -6,7 +6,7 @@ import { Header } from '@/components/FunctionalComponents/Header';
 import { Calculator } from '@/screens/FunctionalComponents/Calculator';
 import { Settings } from '@/screens/FunctionalComponents/Settings';
 import { NotFound } from '@/screens/FunctionalComponents/NotFound';
-import { PageContext } from '@/utils/page-context';
+import { PageContext } from '@/context/page-context';
 import { useTheme } from '@/hooks/useTheme';
 import { ErrorBoundary } from '@/components/ClassComponents/ErrorBoundary';
 

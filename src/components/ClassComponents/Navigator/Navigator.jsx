@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { PageContext } from '@/utils/page-context';
+import { PageContext } from '@/context/page-context';
 import { withRouter } from './withRouter';
 
 import { ListStyle, ListItemStyle } from './components';

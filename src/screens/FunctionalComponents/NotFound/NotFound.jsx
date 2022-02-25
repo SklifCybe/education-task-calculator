@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { PageContext } from '@/utils/page-context';
+import { PageContext } from '@/context/page-context';
 import { Button } from '@/components/FunctionalComponents/Button/components';
 
 import { NotFoundStyle } from './components';
