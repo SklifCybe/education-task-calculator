@@ -1,13 +1,14 @@
-const calculate = (expression) => {
+import { Calculator } from '@/utils/CalculatorStorage';
+
+const smartCalculateLogic = (expression) => {
   const values = [];
   const operators = [];
+  const calc = new Calculator();
 
   for (let i = 0; i < expression.length; i++) {
     if (expression[i] === ' ') {
       continue;
-    }
-
-    if (expression[i] >= '0' && expression[i] <= '9') {
+    } else if (expression[i] >= '0' && expression[i] <= '9') {
       let buffer = '';
       while (i < expression.length && expression[i] >= '0' && expression[i] <= '9') {
         buffer += expression[i++];
@@ -18,7 +19,7 @@ const calculate = (expression) => {
       operators.push(expression[i]);
     } else if (expression[i] === ')') {
       while (operators[operators.length - 1] !== '(') {
-        values.push(applyOp(operators.pop(), values.pop(), values.pop()));
+        values.push(calc.execute(operators.pop(), values.pop(), values.pop()));
       }
       operators.pop();
     } else if (expression[i].match(/'+'||'-'||'*'||-'\/'||'%'/g)) {
@@ -27,49 +28,34 @@ const calculate = (expression) => {
       }
 
       while (operators.length && hasPrecedence(expression[i], operators[operators.length - 1])) {
-        values.push(applyOp(operators.pop(), values.pop(), values.pop()));
+        values.push(calc.execute(operators.pop(), values.pop(), values.pop()));
       }
       operators.push(expression[i]);
     }
   }
 
   while (operators.length) {
-    values.push(applyOp(operators.pop(), values.pop(), values.pop()));
+    values.push(calc.execute(operators.pop(), values.pop(), values.pop()));
   }
 
   return values.pop();
 };
 
-const hasPrecedence = (op1, op2) => {
-  if (op2 === '(' || op2 === ')') {
+const hasPrecedence = (firstOperator, secondOperator) => {
+  if (secondOperator === '(' || secondOperator === ')') {
     return false;
   }
-  if ((op1 === '*' || op1 === '/') && (op2 === '+' || op2 === '-')) {
+  if (
+    (firstOperator === '*' || firstOperator === '/') &&
+    (secondOperator === '+' || secondOperator === '-')
+  ) {
     return false;
   }
   return true;
 };
 
-const applyOp = (op, b, a) => {
-  switch (op) {
-    case '+':
-      return a + b;
-    case '-':
-      return a - b;
-    case '*':
-      return a * b;
-    case '/':
-      if (b === 0) {
-        return 'Cannot divide by zero';
-      }
-      return Math.floor(a / b);
-    case '%':
-      return a % b;
-    case '**':
-      return a ** b;
-    default:
-      return '';
-  }
+const calculate = (expression) => {
+  return smartCalculateLogic(expression);
 };
 
 export { calculate };
