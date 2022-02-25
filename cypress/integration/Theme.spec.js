@@ -1,5 +1,5 @@
 describe('Themes', () => {
-  it('change themes', () => {
+  it('Change themes', () => {
     cy.visit('/settings');
     
     cy.get('select').select('colored');

@@ -7,10 +7,10 @@ import { HistoryStyle } from './components';
 
 const History = ({ historyList, visible }) => {
   return (
-    <HistoryStyle visible={visible} className="history">
+    <HistoryStyle visible={visible} id="history">
       <Flex direction="column" gap="10px">
         <p>History</p>
-        <ul className="history-list">
+        <ul id="history-list">
           {historyList && historyList.map((historyEl, id) => <li key={id}>{historyEl}</li>)}
         </ul>
       </Flex>

@@ -11,25 +11,25 @@ describe('History', () => {
       cy.get('button').contains('CE').click();
     }
 
-    cy.get('.history-list > li').each(($btn) => {
+    cy.get('#history-list > li').each(($btn) => {
       cy.wrap($btn).should('have.text', example);
     });
   });
 
-  it('toggle visible the history', () => {
-    cy.get('.history').should('be.visible');
+  it('Toggle visible the history', () => {
+    cy.get('#history').should('be.visible');
 
     cy.get('button').contains('×').click();
 
-    cy.get('.history').should('not.be.visible');
+    cy.get('#history').should('not.be.visible');
 
     cy.get('button').contains('×').click();
 
-    cy.get('.history').should('be.visible');
+    cy.get('#history').should('be.visible');
   });
 
-  it('delete all history', () => {
-    cy.get('.history > li').should('not.be.empty');
+  it('Delete all history', () => {
+    cy.get('#history > li').should('not.be.empty');
 
     cy.visit('/settings');
 
@@ -37,6 +37,6 @@ describe('History', () => {
 
     cy.visit('/');
 
-    cy.get('.history-list').should('be.empty');
+    cy.get('#history-list').should('be.empty');
   })
 });
